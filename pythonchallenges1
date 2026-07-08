@@ -1,0 +1,25 @@
+'''Check for age for pricing'''
+
+age = int(input("Your age please: "))  # Enter the age
+day = input("Day of Week: ").lower()
+Matinee = input("Enter True or False: ").strip().lower() == "true"
+
+if age < 0 or age > 100:
+    print("Invalid age")
+elif day not in {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"}:
+    print("Invalid day")
+else:
+    if age <= 12:
+        print("Please pay $ 8")
+    elif age >= 65:
+        if day == "tuesday":
+            print("Please pay $ 7")
+        else:
+            print("Please pay $ 10")
+    elif Matinee:
+        if day == "monday":
+            print("Please Pay $ 7")
+        else:
+            print("Please pay $ 9")
+    else:
+        print("Please pay $ 14")
