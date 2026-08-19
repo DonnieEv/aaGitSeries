@@ -3,11 +3,11 @@ from collections import Counter
 
 text = "The quick brown fox jumps over the lazy dog. The dog barks!"
 
-def word_stats(text):
+def word_stats(text1):
     output = {}
   
     text1 = text.lower().strip().translate(str.maketrans('', '', string.punctuation)).split()
-    count1 = Counter(text1).most_common(1)[0][0]
+    count1 = Counter(text).most_common(1)[0][0]
     avg_lent = round(sum(len(word) for word in text1) / len(text1), 2)
     output["# of words"] = len(text1)
     output["unique words"] =len(set(text1))
